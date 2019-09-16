@@ -1,0 +1,20 @@
+:root {
+    --font-main: 'Open Sans', sans-serif;
+    --font-primary: 'Manjari', sans-serif;
+
+    --color-main: 165, 209, 62;
+}
+
+.container-p {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    * {
+        flex: 1 0 auto;
+    }
+}
