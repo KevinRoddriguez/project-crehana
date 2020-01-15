@@ -1,5 +1,6 @@
 * {
-
+    box-sizing: border-box;
+    
     &::after,
     &::before {
         box-sizing: border-box;
@@ -11,10 +12,12 @@ body {
     padding: 0;
     font-family: var(--font-main);
     font-size: 16px;
+    line-height: 1.125em;
 }
 
 img {
     display: block;
+    max-width: 100%;
     width: 100%;
 }
 
@@ -36,7 +39,29 @@ a{
     position: absolute;
     top: 0;
     left: 0;
-    opacity: .4;
+    opacity: 1;
     width: 100%;
+    z-index: -1;
+}
+
+.icon-default {
+    --size-base: 30px;
+    height: var(--size-base);
+    width: var(--size-base);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & * {
+        --size-element: 21px;
+        font-size: var(--size-element);
+        max-height: var(--size-element);
+        max-width: var(--size-element);
+        height: 100%;
+        width: 100%;
+        object-position: center;
+        object-fit: contain;
+    }
 }
 
