@@ -65,6 +65,15 @@ a {
   justify-content: flex-start;
   align-items: stretch; }
 
+.button-primary {
+  --size-button: 30px;
+  min-width: 150px;
+  color: white;
+  background: rgba(var(--color-main), 1);
+  min-height: var(--size-button);
+  border-radius: calc(var(--size-button) / 2);
+  border: none; }
+
 .project-banner {
   position: relative;
   height: 72vh;
@@ -317,16 +326,58 @@ a {
       font-size: 12px; }
   .section-form--content form {
     --size-input: 30px; }
-    .section-form--content form input,
-    .section-form--content form button {
+    .section-form--content form input {
       min-height: var(--size-input);
       border-radius: calc(var(--size-input) / 2);
-      border: none; }
-    .section-form--content form input {
+      border: none;
       margin: 0 3px; }
-    .section-form--content form button {
-      min-width: 150px;
-      color: white;
-      background: rgba(var(--color-main), 1); }
+
+/**
+* Section Statistics
+*/
+.statistics-section {
+  font-size: 13px;
+  padding: 70px 0 70px 0; }
+  .statistics-section .container-p {
+    width: 900px; }
+  .statistics-section--item {
+    flex: 0 0 calc(100% / 3);
+    padding: 0 15px; }
+    .statistics-section--item h4 {
+      font-size: 18px;
+      border-left: 4px solid rgba(var(--color-main), 1);
+      line-height: 1.125em;
+      padding: 7px 0 0 10px;
+      margin: 0 0 21px;
+      text-transform: capitalize; }
+    .statistics-section--item p {
+      margin-bottom: 28px; }
+    .statistics-section--item-list {
+      margin-bottom: 7px; }
+      .statistics-section--item-list span:first-child {
+        color: rgba(var(--color-main), 1);
+        margin-right: 7px;
+        font-size: 21px; }
+    .statistics-section--item-skills {
+      margin-bottom: 14px; }
+      .statistics-section--item-skills:nth-child(2) .item-skills--bar-progress, .statistics-section--item-skills:nth-child(3) .item-skills--bar-progress, .statistics-section--item-skills:nth-child(4) .item-skills--bar-progress {
+        background: rgba(var(--color-main), 1);
+        height: 4px; }
+      .statistics-section--item-skills:nth-child(2) .item-skills--bar-progress {
+        width: 90%; }
+      .statistics-section--item-skills:nth-child(3) .item-skills--bar-progress {
+        width: 90%; }
+      .statistics-section--item-skills:nth-child(4) .item-skills--bar-progress {
+        width: 70%; }
+
+.item-skills--description {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 5px;
+  font-weight: 700; }
+.item-skills--bar {
+  height: 4px;
+  background: rgba(0, 0, 0, 0.16); }
 
 /*# sourceMappingURL=main.css.map */
