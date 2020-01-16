@@ -19,8 +19,18 @@
     --size-button: 30px;
     min-width: 150px;
     color: white;
-    background: rgba(var(--color-main), 1);
+    background-color: rgba(var(--color-main), 1);
     min-height: var(--size-button);
     border-radius: calc(var(--size-button) / 2);
     border: none;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .21);
+
+    transition: .3s box-shadow ease-in-out,
+                .3s background-color ease-in-out,
+                .3s color ease-in-out;
+
+    &:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+        cursor: pointer;
+    }
 }
