@@ -5,6 +5,7 @@
     position: relative;
     height: 72vh;
     margin-bottom: 70px;
+    min-height: 500px;
 
     &--header {
         background: rgba(0, 0, 0, .35);
@@ -15,6 +16,8 @@
             border-left: 3px solid rgba(var(--color-main), 1);
             font-weight: 700;
             padding: .2em .7em;
+            display: inherit;
+            align-items: center;
         }
 
         &-nav {
@@ -24,6 +27,10 @@
         & .container-p {
             justify-content: space-around;
         }
+    }
+
+    &--nav-responsive {
+        display: none;
     }
 
     &--background {
@@ -142,6 +149,28 @@
             display: block;
             padding: .5em;
             text-align: center;
+        }
+    }
+}
+
+.nav-responsive {
+
+    &--lines {
+        --size-element: 40px;
+        height: var(--size-element);
+        width: var(--size-element);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        span {
+            background-color: white;
+            height: 4px;
+            width: 100%;
+            border-radius: 2px;
+            display: block;
         }
     }
 }
@@ -292,6 +321,7 @@
 
         & img {
             width: 69%;
+            object-fit: contain;
         }
     }
 
@@ -389,7 +419,7 @@
                     position: absolute;
                     left: 21px;
                     top: 0;
-                    
+
                     &::before,
                     &::after {
                         --size-element: 3px;
@@ -401,7 +431,7 @@
                         left: calc((var(--size-element) / 2) - var(--size-element));
                         border-radius: 50%;
                     }
-                    
+
                     &::after {
                         left: initial;
                         right: calc((var(--size-element) / 2) - var(--size-element));
@@ -415,6 +445,7 @@
                 border: none;
                 margin: 0 3px;
                 border: 3px solid rgba(var(--color-main), 1);
+                padding: 0 10px;
             }
 
             button {
@@ -678,11 +709,12 @@
         &--social {
             display: flex;
             font-size: 15px;
-        
+
             span {
                 margin: 0 5px;
             }
         }
+
         &--buttons {
             button:last-child {
                 margin-bottom: 0;
@@ -710,13 +742,114 @@
                 height: 100%;
                 object-fit: cover;
                 transition: .3s transform ease-in-out,
-                            .3s object-position ease-in-out;
+                    .3s object-position ease-in-out;
 
                 &:hover {
                     transform: scale(1.125);
                     object-position: left;
                 }
             }
+        }
+    }
+}
+
+/**
+* Responsive
+*/
+
+@media screen and (max-width: 1140px) {
+    .container-p {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .project-banner {
+
+        &--header {
+
+            .container-p {
+                justify-content: space-between;
+            }
+        }
+
+        &--header-nav {
+            display: none;
+        }
+
+        &--nav-responsive {
+            display: block;
+        }
+    }
+
+    .section-openwork {
+
+        &--image img,
+        &--content-text {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .section-skills {
+        .container-p {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        &--item {
+            margin: 0 0 14px 0;
+            flex: 0 0 calc((100% - 4%) / 2);
+        }
+    }
+
+    .statistics-section {
+        .container-p {
+            flex-wrap: wrap;
+        }
+
+        &--item {
+            flex: 0 0 calc(100% / 2);
+            margin: 0 0 21px 0;
+        }
+
+        &--item:last-child {
+            flex: 0 0 100%;
+        }
+    }
+
+    .pricing-section {
+
+        &--container {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        &--card {
+            margin: 0 0 21px 0;
+        }
+    }
+
+    .footer {
+        &-container {
+            flex-wrap: wrap;
+
+            &--item {
+                flex: 0 0 calc(100% / 2);
+                padding: 0 14px;
+                margin: 0 0 21px 0;
+            }
+
+            &--item:last-child {
+                flex: 0 0 100%;
+            }
+        }
+    }
+
+    .item-gallery {
+        &--container {
+            height: 100px;
         }
     }
 }
